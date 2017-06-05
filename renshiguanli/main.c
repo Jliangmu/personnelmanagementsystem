@@ -27,7 +27,7 @@ struct link{
 struct link *AppendNode(struct link *head);//添加一条数据
 void DisplyNode(struct link *head);
 void DeleteMemory(struct link *head);//释放内存
-void Inputdata();
+void Inputdata(struct link *head);
 
 /*数据输入模块*/
 
@@ -42,7 +42,8 @@ int main()
     scanf("%d",&se);
     getchar();
     if(se == 1){
-        Inputdata();
+        struct link *head = NULL;
+        Inputdata(head);
     }
     return 0;
 }
@@ -94,8 +95,8 @@ void hello(){
     printf("* * * * * * * * * * * * * * * * * * * \n");
 }
 
-void Inputdata(){
-    struct link *head = NULL;
+void Inputdata(struct link *head){
+    head = NULL;
     char c;
     int i = 0;
     printf("您想要新建一个员工数据吗(Y/N)?");
